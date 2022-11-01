@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+
+{%block title %} main {%endblock title%}
+
+{%block content %} 
+
+<h1>WEATHER</h1>
+{{qs}}
+<h1>DATA</h1>
+
+{{df}}
+
+<h1>DATA INFO </h1>
+
+{{hf|safe}}
+
+{%endblock content %}

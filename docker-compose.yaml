@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  web: # service name
+
+    #build the image for the web service from the dockerfile in parent directory.  
+    build: . 
+    # command directive passes the parameters to the service and they will be executed by the service.
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"
