@@ -18,14 +18,10 @@ class TestCreateWeatherStation(TestCase):
         self.user.save()
         WeatherStation.objects.create(name = 'GoeStation',  location = 'Goettingen', timestamp = '2012-05-20')
 
-
-
     def test_create_weather_station_instance(self):
         self.client.force_authenticate(self.user)
         weatherS = WeatherStation.objects.get(name="GoeStation")
         self.assertEqual(weatherS.location, 'Goettingen')
-
-
 
     def test_delete_weather_station_instance(self):
         self.client.force_authenticate(self.user)
